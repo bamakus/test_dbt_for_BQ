@@ -5,5 +5,5 @@ cus.last_name,
 cus.dob,
 cus.first_name, 
 d.*
- FROM `{{env_var('DBT_BQ_PROJECT')}}.{{env_var('DBT_BQ_DATASET')}}` cus
+ FROM `{{env_var('DBT_BQ_PROJECT')}}.{{env_var('DBT_BQ_DATASET')}}.customers` cus
 join unnest(addresses) as d	
