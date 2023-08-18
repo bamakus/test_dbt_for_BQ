@@ -1,15 +1,15 @@
 WITH stations AS (
-    SELECT 
+    SELECT *
     FROM {{ ref('raw_bike_stations') }}
 ),
 
 rides AS (
-    SELECT 
+    SELECT *
     FROM {{ ref('cleaned_bike_rides') }}
 ),
 
 start_stat_join AS (
-    SELECT rides.
+    SELECT rides.*
     , stations.bikes_count as start_station_bikes_count
     , stations.docks_count as start_station_docks_count
     , stations.install_date as start_station_install_date
