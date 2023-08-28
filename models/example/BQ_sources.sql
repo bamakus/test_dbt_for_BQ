@@ -1,1 +1,1 @@
-select * from {{ source('big_sales', 'FactSales_partitioned') }}	
+select * from {{ source('big_sales', 'Sales.FactSales_partitioned') }}	
