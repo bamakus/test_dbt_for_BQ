@@ -1,1 +1,1 @@
-select * from {{ source('test-bi-query-291307', 'FactSales_partitioned') }}	
+select * from {{ source('big_sales', 'FactSales_partitioned') }}	
