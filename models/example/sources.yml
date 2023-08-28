@@ -2,9 +2,10 @@
 version: 2
 
 sources:
-  - name: test-bi-query-291307
+  - name: bigquery
     schema: Sales
     database: test-bi-query-291307
     tables: 
-      - name: FactSales_partitioned
+      - name: FactSales
+        identifier: FactSales_partitioned*
 
