@@ -1,0 +1,10 @@
+
+version: 2
+
+sources:
+  - name: test-bi-query-291307
+    schema: dataset
+    database: Sales
+    tables: 
+      - name: FactSales_partitioned
+
