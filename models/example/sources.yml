@@ -3,8 +3,8 @@ version: 2
 
 sources:
   - name: big_sales
-    schema: dataset
+    schema: Sales
     database: test-bi-query-291307
     tables: 
-      - name: Sales.FactSales_partitioned
+      - name: FactSales_partitioned
 
