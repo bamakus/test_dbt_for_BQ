@@ -1,1 +1,1 @@
-select * from `{{ source('bigquery', 'FactSales') }}`
+select * from {{ source('bigquery', 'FactSales') }}
