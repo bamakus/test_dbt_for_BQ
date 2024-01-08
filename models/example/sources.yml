@@ -3,9 +3,13 @@ version: 2
 
 sources:
   - name: bigquery
-    schema: Sales
+    schema: Sales_Cleaned
     database: test-bi-query-291307
     tables: 
       - name: FactSales
-        identifier: FactSales_partitioned*
-
+        identifier: Sales*
+     freshness:
+          warn_after:
+            count: 1
+            period: day
+        loaded_at_field: date_fact
