@@ -7,7 +7,7 @@ sources:
     database: test-bi-query-291307
     tables: 
       - name: FactSales
-        identifier: Sales*
+        identifier: sales*
      freshness:
           warn_after:
             count: 1
