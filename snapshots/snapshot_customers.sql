@@ -5,7 +5,7 @@
     materialized='snapshot',
     target_schema='dbt_demo_bigquery',
     strategy='timestamp',      
-    unique_key='cus.id , d.status',      
+    unique_key="cus.id||'-'||d.status",     
     updated_at='snapshot_timestamp'
     ) }}
 
