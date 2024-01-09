@@ -3,7 +3,7 @@
 {{ config(
    target_schema='snapshots',      
     strategy='timestamp',      
-    unique_key='cus.id',      
+    unique_key='cus.id', 'snapshot_timestamp'      
     updated_at='snapshot_timestamp'
     ) }}
 
