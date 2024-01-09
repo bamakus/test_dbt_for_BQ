@@ -1,7 +1,7 @@
 --  In this strategy, dbt will create a new snapshot record whenever the timestamp column is more recent than the last time the snapshot was run
 -- for TEST  virtual timestamp value created each time a RUN 
 {{ config(
-   target_schema='snapshots',      
+    materialized='snapshot',      
     strategy='timestamp',      
     unique_key='cus.id , d.status',      
     updated_at='snapshot_timestamp'
