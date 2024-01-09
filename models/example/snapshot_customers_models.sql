@@ -1,13 +1,16 @@
 -- product_snapshot_model.sql
 {{ config(
     materialized='snapshot',
-    unique_key='product_id, snapshot_timestamp'
+    unique_key='cus.id, snapshot_timestamp'
 ) }}
 
+
 SELECT
-  CURRENT_TIMESTAMP() AS snapshot_timestamp,
-  product_id,
-  product_name,
-  inventory_count
-FROM
-  {{ ref('products') }}
+CURRENT_TIMESTAMP() AS snapshot_timestamp,    
+cus.id,
+cus.last_name,
+cus.dob,
+cus.first_name, 
+d.*
+ FROM `{{env_var('DBT_BQ_PROJECT')}}.{{env_var('DBT_BQ_DATASET')}}.customers` cus
+join unnest(addresses) as d	
