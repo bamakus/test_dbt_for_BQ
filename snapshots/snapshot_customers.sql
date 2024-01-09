@@ -2,7 +2,8 @@
 -- for TEST  virtual timestamp value created each time a RUN 
 {% snapshot snapshot_customers %}
 {{ config(
-    materialized='snapshot',      
+    materialized='snapshot',
+    target_schema='snapshots',
     strategy='timestamp',      
     unique_key='cus.id , d.status',      
     updated_at='snapshot_timestamp'
