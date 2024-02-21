@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='month'
+    )
+}}
+
 SELECT
     SUM(duration_minutes) as total_minutes
     , COUNT(rental_id) as total_bike_hires
@@ -14,5 +21,12 @@ SELECT
     , end_station_id
     , end_station_name
 FROM {{ ref('raw_bike_hires') }}
+
+{% if is_incremental() %}
+  -- this filter will only be applied on an incremental run
+  -- (uses >= to include records arriving later on the same day as the last run of this model)
+ WHERE EXTRACT(month from start_date)  >= (select max(month) from {{ this }})
+{% endif %}    
+
 GROUP BY 4,5,6,7,8,9,10
 ORDER BY total_minutes DESC
