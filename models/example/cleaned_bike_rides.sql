@@ -1,7 +1,7 @@
 {{
     config(
         materialized='incremental',
-        unique_key='month'
+        unique_key= ['month','start_peak_travel','same_station_flag','start_station_id','end_station_id'] 
     )
 }}
 
