@@ -6,7 +6,7 @@
     target_schema='dbt_demo_bigquery',
     strategy='check',      
     unique_key="id||'-'||status",     
-    check_cols=['last_name']
+    check_cols=['first_name']
     ) }}
 
 -- Pro-Tip: Use sources in snapshots!
