@@ -1,6 +1,6 @@
 --  In this strategy, dbt will create a new snapshot record whenever the timestamp column is more recent than the last time the snapshot was run
 -- for TEST  virtual timestamp value created each time a RUN 
-{% snapshot snapshot_customers-type2  %}
+{% snapshot snapshot_customers_type2  %}
 {{ config(
     materialized='snapshot',
     target_schema='dbt_demo_bigquery',
