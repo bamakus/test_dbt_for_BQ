@@ -16,7 +16,6 @@ cus.id,
 cus.last_name,
 cus.dob,
 cus.first_name,
-cus.numberOfYears, 
 d.*
  FROM `{{env_var('DBT_BQ_PROJECT')}}.{{env_var('DBT_BQ_DATASET')}}.customers` cus
 join unnest(addresses) as d	
