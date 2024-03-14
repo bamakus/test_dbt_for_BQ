@@ -1,7 +1,7 @@
 {{
     config(
         materialized='incremental',         
-        unique_key="id||'-'||status", 
+        unique_key="cus.id||'-'||d.status", 
         strategy = "merge" 
     )
 }}
