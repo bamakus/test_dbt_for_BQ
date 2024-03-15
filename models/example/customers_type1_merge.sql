@@ -1,12 +1,13 @@
 {{
     config(
         materialized='incremental',         
-        unique_key="DBT_INTERNAL_SOURCE.id||'-'||DBT_INTERNAL_SOURCE.status", 
+        unique_key="PK", 
         strategy = "merge" 
     )
 }}
 
-SELECT   
+SELECT
+cus.id||'-'||d.status as PK,  
 cus.id,
 cus.dob,
 cus.last_name, 
