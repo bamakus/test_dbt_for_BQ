@@ -10,6 +10,6 @@ sources:
         identifier: sales*
         freshness:
           warn_after:
-            count: 6
+            count: 7
             period: day
         loaded_at_field: date_fact
